@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Имя Фамилия — Fullstack-разработчик</title>
+    <style>
+        /* ---------- Базовые настройки ---------- */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: #fafafa;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            line-height: 1.25;
+        }
+        
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        /* ---------- Навигация ---------- */
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 12px 24px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        nav a {
+            color: #333;
+            font-weight: 500;
+        }
+        /* ---------- Общий контейнер ---------- */
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* ---------- Hero ---------- */
+        
+        .hero {
+            padding: 80px 24px 60px;
+            text-align: center;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+        
+        .hero .role {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .hero .desc {
+            max-width: 640px;
+            margin: 0 auto 32px;
+            color: #444;
+        }
+        
+        .hero .buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+        
+        .btn-primary {
+            background: #0066cc;
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background: #0052a3;
+            text-decoration: none;
+        }
+        
+        .btn-outline {
+            background: #fff;
+            color: #0066cc;
+            border: 1px solid #0066cc;
+        }
+        
+        .btn-outline:hover {
+            background: #f0f7ff;
+            text-decoration: none;
+        }
+        /* ---------- Секции ---------- */
+        
+        section {
+            padding: 64px 0;
+        }
+        
+        section h2 {
+            font-size: 28px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        section h2 .accent {
+            color: #0066cc;
+        }
+        /* ---------- Три направления ---------- */
+        
+        .directions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 28px 24px;
+        }
+        
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+        
+        .card h4 {
+            font-size: 15px;
+            margin: 16px 0 8px;
+            color: #0066cc;
+        }
+        
+        .card p,
+        .card li {
+            font-size: 15px;
+            color: #333;
+        }
+        
+        .card ul {
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .card ul li {
+            margin-bottom: 4px;
+        }
+        
+        .card .stack {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #666;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+        }
+        /* ---------- О себе ---------- */
+        
+        .about p {
+            font-size: 16px;
+            margin-bottom: 16px;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* ---------- Опыт ---------- */
+        
+        .exp-item {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .exp-item h3 {
+            font-size: 19px;
+            margin-bottom: 6px;
+        }
+        
+        .exp-item .meta {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+        
+        .exp-item ul {
+            padding-left: 20px;
+        }
+        
+        .exp-item li {
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+        /* ---------- Навыки ---------- */
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-group {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .skill-group h4 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #0066cc;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .skill-group ul {
+            list-style: none;
+        }
+        
+        .skill-group li {
+            font-size: 14px;
+            padding: 4px 0;
+            color: #333;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .skill-group li:last-child {
+            border-bottom: none;
+        }
+        /* ---------- Контакты ---------- */
+        
+        .contacts {
+            text-align: center;
+        }
+        
+        .contacts p {
+            margin-bottom: 24px;
+            color: #555;
+        }
+        
+        .contacts .buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        
+        .contacts .links {
+            font-size: 15px;
+            color: #444;
+        }
+        
+        .contacts .links a {
+            margin: 0 8px;
+        }
+        /* ---------- Футер ---------- */
+        
+        footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid #e5e5e5;
+        }
+        /* ---------- Мобильная адаптация ---------- */
+        
+        @media (max-width: 820px) {
+            .directions {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero .role {
+                font-size: 17px;
+            }
+            section {
+                padding: 48px 0;
+            }
+            section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== НАВИГАЦИЯ ===================== -->
+    <nav>
+        <a href="#directions">Направления</a>
+        <a href="#about">О себе</a>
+        <a href="#experience">Опыт</a>
+        <a href="#skills">Навыки</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <header class="hero">
+        <h1>Имя Фамилия</h1>
+        <div class="role">Fullstack-разработчик</div>
+        <p class="desc">Сайты, CRM-системы и Android-приложения. От проектирования базы данных до деплоя и публикации в сторе.</p>
+        <div class="buttons">
+            <a href="#directions" class="btn btn-primary">Смотреть проекты</a>
+            <a href="#contacts" class="btn btn-outline">Связаться</a>
+        </div>
+    </header>
+
+    <!-- ===================== ТРИ НАПРАВЛЕНИЯ ===================== -->
+    <section id="directions">
+        <div class="container">
+            <h2>Что я <span class="accent">делаю</span></h2>
+            <div class="directions">
+
+                <!-- Сайты -->
+                <div class="card">
+                    <h3>🌐 Сайты</h3>
+                    <p>Разрабатываю сайты любой сложности — от лендингов и корпоративных визиток до полноценных интернет-магазинов с личным кабинетом, корзиной и онлайн-оплатой.</p>
+
+                    <h4>Два подхода в работе</h4>
+                    <ul>
+                        <li><b>На чистом PHP</b> — максимальная лёгкость, прозрачность кода, отсутствие зависимостей.</li>
+                        <li><b>На Laravel</b> — быстрая разработка, масштабируемость, современная экосистема.</li>
+                    </ul>
+
+                    <h4>Что входит в работу</h4>
+                    <ul>
+                        <li>Адаптивный интерфейс и вёрстка</li>
+                        <li>Бизнес-логика, работа с БД</li>
+                        <li>Кнопки связи через Telegram и WhatsApp</li>
+                        <li>Личный кабинет и авторизация</li>
+                        <li>REST API для мобильных приложений</li>
+                        <li>Деплой: домен, SSL, хостинг</li>
+                    </ul>
+
+                    <div class="stack"><b>Стек:</b> PHP 8.4, Laravel 13, Livewire 4, Tailwind CSS, Alpine.js, Vite, MySQL, JavaScript, jQuery, AJAX, REST API.</div>
+                </div>
+
+                <!-- Мобильные приложения -->
+                <div class="card">
+                    <h3>📱 Мобильные приложения</h3>
+                    <p>Разрабатываю Android-приложения на Java — как небольшие утилиты для личного использования, так и полноценные бизнес-инструменты, дополняющие веб-проекты.</p>
+
+                    <h4>Что умею</h4>
+                    <ul>
+                        <li>Нативные приложения (Java, API 17+)</li>
+                        <li>Локальное хранение: SQLite</li>
+                        <li>Удалённое хранение: MySQL через REST API</li>
+                        <li>Сеть: Volley, JSON, Gson</li>
+                        <li>Изображения: Glide</li>
+                        <li>Распознавание речи, уведомления, разрешения</li>
+                        <li>Полный цикл до публикации в RuStore / Google Play</li>
+                    </ul>
+
+                    <h4>Два типа проектов</h4>
+                    <ul>
+                        <li><b>Для себя</b> — утилиты: заметки, списки, трекеры</li>
+                        <li><b>Для бизнеса</b> — мобильные админки и CRM-клиенты</li>
+                    </ul>
+
+                    <div class="stack"><b>Стек:</b> Java, Android SDK, SQLite, Retrofit, Volley, Gson, Glide, REST API, JSON.</div>
+                </div>
+
+                <!-- CRM системы -->
+                <div class="card">
+                    <h3>⚙️ CRM системы</h3>
+                    <p>Разрабатываю CRM-системы и админ-панели для управления бизнесом — от учёта заказов до финансов и сотрудников.</p>
+
+                    <h4>Что входит в CRM</h4>
+                    <ul>
+                        <li>Заказы, клиенты, товары, материалы</li>
+                        <li>Финансы: доходы, расходы, зарплаты</li>
+                        <li>Сотрудники, роли, права доступа</li>
+                        <li>Рабочий процесс и этапы производства</li>
+                        <li>Отчётность и аналитика</li>
+                        <li>REST API для мобильных приложений</li>
+                    </ul>
+
+                    <h4>Два подхода в работе</h4>
+                    <ul>
+                        <li><b>На чистом PHP</b> — с нуля, включая REST API без фреймворков</li>
+                        <li><b>На Laravel + Filament</b> — современный стек для быстрой разработки</li>
+                    </ul>
+
+                    <div class="stack"><b>Стек:</b> PHP 8.4, Laravel 13, Livewire 4, Filament 5, MySQL, REST API, Tailwind CSS, Alpine.js, Vite, Java (Android).</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== О СЕБЕ ===================== -->
+    <section id="about" style="background:#fff;">
+        <div class="container about">
+            <h2>О <span class="accent">себе</span></h2>
+            <p>Меня зовут [Имя]. Я разработчик, который пришёл в IT осознанно — и остался, потому что это то, чем мне действительно нравится заниматься.</p>
+            <p>Начинал с Android: писал на Java приложения для себя — заметки, списки, утилиты. Постепенно захотелось делать больше, и я освоил веб-разработку: сначала чистый PHP, затем Laravel и современный стек. Сейчас совмещаю оба направления — могу собрать
+                и сайт, и админку, и мобильное приложение, которое с ними работает.</p>
+            <p>Учусь самостоятельно — по документации, исходникам и практике. Не боюсь читать чужой код и разбираться в незнакомых технологиях. За плечами 16 лет работы слесарем на заводе — это научило дисциплине, ответственности и умению доводить дело до
+                конца, даже когда никто не стоит над душой.</p>
+            <p>Сейчас ищу команду, где смогу расти как инженер и приносить пользу реальными проектами.</p>
+        </div>
+    </section>
+
+    <!-- ===================== ОПЫТ ===================== -->
+    <section id="experience">
+        <div class="container">
+            <h2>Опыт <span class="accent">работы</span></h2>
+
+            <div class="exp-item">
+                <h3>Личные проекты</h3>
+                <div class="meta">[год начала] — настоящее время</div>
+                <p style="margin-bottom:14px;">Разрабатываю проекты полного цикла: от идеи и проектирования базы данных до деплоя на хостинг и публикации мобильного приложения в сторе.</p>
+
+                <h4 style="margin-top:16px; margin-bottom:8px;">Интернет-магазин кованых изделий — веб-приложение и Android-админка</h4>
+                <ul>
+                    <li>Витрина: каталог, карточки товаров, корзина, оформление заказа, кнопки быстрой связи через Telegram и WhatsApp.</li>
+                    <li>Админ-панель и CRM: заказы, клиенты, материалы, доходы и расходы, сотрудники, зарплаты, права доступа, рабочий процесс.</li>
+                    <li>REST API для мобильного приложения: авторизация, CRUD по всем сущностям, загрузка и удаление изображений.</li>
+                    <li>Android-приложение-админка на Java: управление заказами, изделиями, материалами, финансами и сотрудниками прямо с телефона.</li>
+                    <li>Проект реализован дважды: сначала на чистом PHP без фреймворков, затем переписан на Laravel с Livewire и Filament.</li>
+                    <li>Проект разработан с нуля под ключ: от проектирования БД до деплоя и публикации мобильного приложения. Все модули работают, проект развёрнут онлайн и доступен для тестирования.</li>
+                </ul>
+
+                <h4 style="margin-top:20px; margin-bottom:8px;">Приложение «Записная книжка» — Android, Java</h4>
+                <ul>
+                    <li>Заметки с категориями, пользовательскими папками, редактированием и удалением.</li>
+                    <li>Запись голосом через Android Speech Recognizer.</li>
+                    <li>Локальное хранение данных в SQLite без интернета.</li>
+                    <li>Опубликовано в RuStore.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== НАВЫКИ ===================== -->
+    <section id="skills" style="background:#fff;">
+        <div class="container">
+            <h2>Навыки</h2>
+            <div class="skills">
+
+                <div class="skill-group">
+                    <h4>Backend</h4>
+                    <ul>
+                        <li>PHP 8.4 (чистый и с фреймворками)</li>
+                        <li>Laravel 13, Livewire 4</li>
+                        <li>Filament 5, Sanctum</li>
+                        <li>REST API с нуля</li>
+                        <li>MySQL 8.0</li>
+                        <li>Сессии, аутентификация, права</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Frontend</h4>
+                    <ul>
+                        <li>HTML5, CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>jQuery, AJAX</li>
+                        <li>Tailwind CSS</li>
+                        <li>Alpine.js, Vite</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Mobile</h4>
+                    <ul>
+                        <li>Java, Android SDK (API 17+)</li>
+                        <li>SQLite, SQLiteOpenHelper</li>
+                        <li>Volley</li>
+                        <li>Gson, Glide</li>
+                        <li>Android Speech Recognizer</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Инструменты</h4>
+                    <ul>
+                        <li>Git, GitHub</li>
+                        <li>Деплой: домен, SSL, хостинг</li>
+                        <li>Публикация в RuStore / Google Play</li>
+                        <li>Самостоятельное обучение</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== КОНТАКТЫ ===================== -->
+    <section id="contacts">
+        <div class="container contacts">
+            <h2>Контакты</h2>
+            <p>Открыт к предложениям о работе и сотрудничеству.</p>
+            <div class="buttons">
+                <a href="https://t.me/Alexander_Korolew " class="btn btn-primary" target="_blank">Написать в Telegram</a>
+                <a href="mailto:korolewsanay@gmail.com " class="btn btn-outline">Отправить email</a>
+            </div>
+            <div class="links">
+                <a href="https://github.com/ваш_профиль" target="_blank">GitHub</a> ·
+                <a href="https://hh.ru/ваш_профиль" target="_blank">HH.ru</a> ·
+                <a href="mailto:ваш@email.com">ваш@email.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Имя Фамилия. Сделано с нуля — на чистом HTML и CSS.
+    </footer>
+
+</body>
+
+</html>
