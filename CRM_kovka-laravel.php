@@ -21,8 +21,7 @@
         <section class="project-intro">
             <h2>Админ-панель + CRM для интернет-магазина кованых изделий</h2>
             <p class="tech-stack">
-                Выполнено на фреймфорке <strong>LARAVEL</strong>. 
-                Стек: HTML5, PHP 8.4, Laravel 13, Livewire 4, MySQL, Tailwind CSS, Alpine.js, Vite.
+                Стек: HTML5, PHP 8.4, Laravel 13, Filament 5, MySQL, Tailwind CSS, Alpine.js, Vite.
             </p>    
             <div class="project-links">
                 <a href="https://example.com" target="_blank" rel="noopener">🔗 Ссылка на сайт (логин: admin@kovka.com, пароль:12345678)</a>&nbsp;&nbsp;
