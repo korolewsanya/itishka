@@ -21,7 +21,7 @@
 | :---: | :---: |
 | <img src="screenshots/Главная.png" width="400"> | <img src="screenshots/Сайты.png" width="400"> |
 | **Мобильные приложения** | **CRM-системы** |
-| <img src="screenshots/Приложения.png" width="400"> | <img src="screenshots/CRM-системы.png" width="400"> |
+| <img src="screenshots/Приложения.png" width="400"> | <img src="screenshots/CRM_системы.png" width="400"> |
 
 </details>
 
