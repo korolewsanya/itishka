@@ -22,6 +22,10 @@
 | <img src="screenshots/Главная.png" width="400"> | <img src="screenshots/Сайты.png" width="400"> |
 | **Мобильные приложения** | **CRM-системы** |
 | <img src="screenshots/Приложения.png" width="400"> | <img src="screenshots/CRM_системы.png" width="400"> |
+| **Подробнее о сайте** | **Подробнее о CRM-системе** |
+| <img src="screenshots/СайтПодробности.png" width="400"> | <img src="screenshots/CRMПодробности.png" width="400"> |
+| **Подробности Приложения** | **Подробности Приложения** |
+| <img src="screenshots/ПриложенияПодробности.png" width="400"> |  <img src="screenshots/ПриложенияПодробности2.png" width="400"> |
 
 </details>
 
