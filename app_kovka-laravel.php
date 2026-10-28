@@ -24,7 +24,7 @@
                 Стек: Android (Java) · Volley · Gson · Glide · REST API (JSON) · MySQL (backend)
             </p>    
             <div class="project-links">
-                <a href="https://example.com" target="_blank" rel="noopener">🔗 Ссылка на RuStore (логин: admin@kovka.com, пароль:12345678)</a>&nbsp;&nbsp;
+                <a href="https://www.rustore.ru/catalog/app/com.example.kovka" target="_blank" rel="noopener">🔗 Ссылка на RuStore (логин: admin@kovka.com, пароль:12345678)</a>&nbsp;&nbsp;
                 <a href="https://github.com/korolewsanya/kovka-laravel-android" target="_blank" rel="noopener">💻 Ссылка на GitHub</a>
             </div>
         </section>

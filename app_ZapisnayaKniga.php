@@ -25,7 +25,7 @@
                 Стек: Android (Java), SQLite
             </p>    
             <div class="project-links">
-                <a href="https://example.com" target="_blank" rel="noopener">🔗 Ссылка на RuStore</a>&nbsp;&nbsp;
+                <a href="https://www.rustore.ru/catalog/app/com.example.zapisnayakniga" target="_blank" rel="noopener">🔗 Ссылка на RuStore</a>&nbsp;&nbsp;
                 <a href="https://github.com/korolewsanya/ZapisnayaKniga" target="_blank" rel="noopener">💻 Ссылка на GitHub</a>
             </div>
         </section>

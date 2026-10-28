@@ -24,7 +24,7 @@
                 Стек: Android (Java)
             </p>    
             <div class="project-links">
-                <a href="https://example.com" target="_blank" rel="noopener">🔗 Ссылка на RuStore</a>&nbsp;&nbsp;
+                <a href="https://www.rustore.ru/catalog/app/rus.test.chasti_rechi" target="_blank" rel="noopener">🔗 Ссылка на RuStore</a>&nbsp;&nbsp;
                 <a href="https://github.com/korolewsanya/Chasti_rechi" target="_blank" rel="noopener">💻 Ссылка на GitHub</a>
             </div>
         </section>
